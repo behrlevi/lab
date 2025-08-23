@@ -19,5 +19,18 @@ spec:
       containers:
       - image: ghcr.io/mealie-recipes/mealie
         name: mealie
+        volumeMounts:
+          - name: tarsoly
+            mountPath: /tarsoly
+          - name: data
+            mountPath: /app/data
+
         ports:
           - containerPort: 9000
+      volumes:
+      - name: tarsoly
+        emptyDir: {}
+      - name: data
+        persistentVolumeClaim:
+          claimName: mealie-data
+
