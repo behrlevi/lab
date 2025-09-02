@@ -1,0 +1,8 @@
+homarr:
+  persistence:
+    enabled: true
+    storageClass: standard   # or your cluster's storage class
+    accessModes:
+      - ReadWriteOnce
+    size: 1Gi
+
